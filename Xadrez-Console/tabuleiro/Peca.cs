@@ -1,6 +1,4 @@
-﻿
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     class Peca
     {
@@ -19,6 +17,11 @@ namespace tabuleiro
             QtMovi = 0;
         }
 
-       
+        public void IncrementarQtMovimentos()
+        {
+            QtMovi++;
+        }
+
+
     }
 }
