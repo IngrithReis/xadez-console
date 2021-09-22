@@ -1,6 +1,6 @@
 ﻿namespace tabuleiro
 {
-    class Peca
+        abstract class Peca
     {
         public Posicao Posicao { get; set; }
         public Cor Cor { get; protected set; } // protected, pode ser alterada por ela mesma e pelas subclasses dela
@@ -21,6 +21,9 @@
         {
             QtMovi++;
         }
+
+        public abstract bool[,] MovPossiveis();
+        
 
 
     }

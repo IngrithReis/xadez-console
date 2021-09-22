@@ -11,14 +11,24 @@ namespace Xadrez_Console
         {
             try
             {
+                Tabuleiro tab = new Tabuleiro(8, 8);
                 PartidaDeXadrez partida = new PartidaDeXadrez();
+                
+
                 while (!partida.Terminada)
                 {
+                   
+
                     Console.Clear();
                     Tela.ImprimirTabuleiro(partida.tab);
 
                     Console.Write("Origem: ");
                     Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+                    bool[,] posicoesPossiveis = partida.tab.Peca(origem).MovPossiveis();
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
 
