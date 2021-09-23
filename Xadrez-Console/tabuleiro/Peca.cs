@@ -21,7 +21,25 @@
         {
             QtMovi++;
         }
-
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovPossiveis();
+            for(int l = 0; l < Tab.Linhas; l++)
+            {
+               for (int c = 0; c < Tab.Colunas; c++)
+                {
+                    if(mat[l,c] == true)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public bool PodeMoverPara(Posicao pos)
+        {
+            return MovPossiveis()[pos.Linha, pos.Coluna];
+        }
         public abstract bool[,] MovPossiveis();
         
 
