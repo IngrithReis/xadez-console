@@ -21,6 +21,11 @@
         {
             QtMovi++;
         }
+
+        public void DecreementarQtMovimentos()
+        {
+            QtMovi--;
+        }
         public bool ExisteMovimentosPossiveis()
         {
             bool[,] mat = MovPossiveis();
